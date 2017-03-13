@@ -28,18 +28,8 @@ It also gives the sharing id.
 end note
 
 loop For each recipient
-AC->AC: Generate pretoken
-note over AC:
-The "pretoken" is used to authenticate any
-reply made by the recipient.
-It is only used when initiating the sharing.
-end note
+AC->AC: Check if recipient has an OAuth Client
 
-AC->AC: Check if recipient has an access
-
-alt Recipient doesn't have an access
-
-AC->AC: Check if Recipient's contact exist
 alt Recipient's contact doesn't exist
 AC->AC: Create Recipient's contact
 end
@@ -53,24 +43,14 @@ note over AC:
 end note
 
 
-else Recipient has an access
-AC->AC: Update Recipient's\naccess document
-note over AC:
-Add to the list of sharings the information
-relative to this one:
-{sharing id, filter, pretoken}
-end note
-end
-
-AC->AC: Add contact id to sharing document
+else Recipient has a OAuth client
 
 AC->AC: Generate sharing request
 note over AC:
 * Alice's URL
-* filter
-* pretoken
-* list of ids of shared documents
-* type
+* permissions
+    * list of ids of shared documents
+* sharing type
 * sharing id
 * description
 end note

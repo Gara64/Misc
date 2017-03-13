@@ -8,14 +8,12 @@ AC->+BC: Sharing request
 
 BC->BC: Create temporary sharing\ndocument
 note over BC:
-* id (equal to the sharing id)
+* sharing id
 * sharer = Alice
 * recipients (empty if type is not "master-master")
-* filter
-* list of ids of shared documents
+* permissions
 * description
-* type
-* pretoken
+* sharing type
 end note
 
 BC->Bob: Accept sharing?

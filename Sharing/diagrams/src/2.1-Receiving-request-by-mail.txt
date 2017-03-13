@@ -5,14 +5,12 @@ participant Bob's Cozy as BC
 
 B->+B: Received sharing request by mail
 note over B:
-In the mail the recipient, Bob, receives there is a field to
-copy-paste in the sharing manager page to start the sharing.
-This field contains all the information required.
+In the mail, the recipient, Bob, receives a URL containing 
+all the informations needed to get the sharing.
 end note
 
-B->B: Open "sharing manager" page on Cozy
-B->B: Copy-paste request
-B->+BC: Submit
+B->B: Click the URL
+B->+BC: Request
 deactivate B
 
 note over BC:
